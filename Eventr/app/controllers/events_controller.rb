@@ -13,7 +13,7 @@ class EventsController < ApplicationController
 
     def event_serializer_options
         {:include => {
-            :activities => {:except => [:created_at, :updated_at]}
+            :activitiesg => {:except => [:created_at, :updated_at]}
         },
     :except =>[:created_at, :updated_at] }
     end
