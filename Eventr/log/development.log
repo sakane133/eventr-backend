@@ -865,3 +865,1073 @@ Processing by ActivitiesController#create as */*
 Completed 200 OK in 450856ms (Views: 36.0ms | ActiveRecord: 14.1ms)
 
 
+Started POST "/activities" for ::1 at 2019-09-09 09:49:03 -0400
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7524942711515773740)[0m
+  ↳ bin/rails:4
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to AddCategoryToActivities (20190906204407)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (6.5ms)[0m  [1m[35mALTER TABLE "activities" ADD "category" character varying[0m
+  ↳ db/migrate/20190906204407_add_category_to_activities.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190906204407"]]
+  ↳ bin/rails:4
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7524942711515773740)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[36mEvent Load (2.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mEvent Destroy (0.6ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mEvent Destroy (0.7ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[36mActivityEvent Load (0.8ms)[0m  [1m[34mSELECT "activity_events".* FROM "activity_events"[0m
+  ↳ db/seeds.rb:10
+  [1m[36mPhoto Load (1.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActivity Load (0.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (2.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lisa"], ["password", "lisa"], ["created_at", "2019-09-09 13:49:33.619261"], ["updated_at", "2019-09-09 13:49:33.619261"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "events" ("event_type", "name", "num_people", "budget", "date", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["event_type", "birthday"], ["name", "Lisa bday bash"], ["num_people", 10], ["budget", 1000], ["date", 20190915], ["created_at", "2019-09-09 13:49:33.636052"], ["updated_at", "2019-09-09 13:49:33.636052"], ["user_id", 5]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mActivity Create (1.3ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Clubbling"], ["created_at", "2019-09-09 13:49:33.660171"], ["updated_at", "2019-09-09 13:49:33.660171"], ["link", "www.google.com"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mActivityEvent Create (1.0ms)[0m  [1m[32mINSERT INTO "activity_events" ("activity_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["activity_id", 1], ["event_id", 3], ["created_at", "2019-09-09 13:49:33.679017"], ["updated_at", "2019-09-09 13:49:33.679017"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+Started POST "/activities" for ::1 at 2019-09-09 09:49:41 -0400
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+Completed 500 Internal Server Error in 185ms (ActiveRecord: 9.2ms)
+
+
+  
+NoMethodError (undefined method `sample' for nil:NilClass):
+  
+app/controllers/activities_controller.rb:9:in `create'
+Started POST "/activities" for ::1 at 2019-09-09 09:51:56 -0400
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+Started POST "/activities" for ::1 at 2019-09-09 09:54:25 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7524942711515773740)[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7524942711515773740)[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mEvent Destroy (0.6ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[36mActivityEvent Load (0.7ms)[0m  [1m[34mSELECT "activity_events".* FROM "activity_events"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mActivityEvent Destroy (0.4ms)[0m  [1m[31mDELETE FROM "activity_events" WHERE "activity_events"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActivity Load (0.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActivity Destroy (0.6ms)[0m  [1m[31mDELETE FROM "activities" WHERE "activities"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lisa"], ["password", "lisa"], ["created_at", "2019-09-09 13:57:48.180638"], ["updated_at", "2019-09-09 13:57:48.180638"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "events" ("event_type", "name", "num_people", "budget", "date", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["event_type", "birthday"], ["name", "Lisa bday bash"], ["num_people", 10], ["budget", 1000], ["date", 20190915], ["created_at", "2019-09-09 13:57:48.191166"], ["updated_at", "2019-09-09 13:57:48.191166"], ["user_id", 6]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mActivity Create (0.5ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Clubbling"], ["created_at", "2019-09-09 13:57:48.195975"], ["updated_at", "2019-09-09 13:57:48.195975"], ["link", "www.google.com"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mActivityEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "activity_events" ("activity_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["activity_id", 2], ["event_id", 4], ["created_at", "2019-09-09 13:57:48.206559"], ["updated_at", "2019-09-09 13:57:48.206559"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+Started POST "/activities" for ::1 at 2019-09-09 09:58:13 -0400
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+Started POST "/activities" for ::1 at 2019-09-09 09:59:10 -0400
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+Completed 500 Internal Server Error in 400ms (ActiveRecord: 4.9ms)
+
+
+  
+NoMethodError (undefined method `sample' for nil:NilClass):
+  
+app/controllers/activities_controller.rb:9:in `create'
+Started POST "/activities" for ::1 at 2019-09-09 14:23:33 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+  [1m[36mActivity Load (2.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/controllers/activities_controller.rb:13
+Started POST "/activities" for ::1 at 2019-09-09 14:25:50 -0400
+Started POST "/activities" for ::1 at 2019-09-09 14:25:50 -0400
+Started POST "/activities" for ::1 at 2019-09-09 14:25:50 -0400
+Started POST "/activities" for ::1 at 2019-09-09 14:25:50 -0400
+Completed 200 OK in 136165ms (Views: 32.4ms | ActiveRecord: 12.1ms)
+
+
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+Processing by ActivitiesController#create as */*
+Started POST "/activities" for ::1 at 2019-09-09 14:25:50 -0400
+Processing by ActivitiesController#create as */*
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+Started GET "/activities" for ::1 at 2019-09-09 14:26:59 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ActivitiesController#index as HTML
+  [1m[36mActivity Load (0.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/controllers/activities_controller.rb:19
+Completed 200 OK in 22ms (Views: 7.9ms | ActiveRecord: 10.6ms)
+
+
+Started POST "/activities" for ::1 at 2019-09-09 14:28:32 -0400
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+  [1m[36mActivity Load (2.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/controllers/activities_controller.rb:13
+Completed 200 OK in 1135ms (Views: 2.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2019-09-09 14:35:28 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (6.2ms)
+Completed 200 OK in 21ms (Views: 16.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for ::1 at 2019-09-09 14:35:32 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (2.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:5
+  [1m[36mActivity Load (1.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "activity_events" ON "activities"."id" = "activity_events"."activity_id" WHERE "activity_events"."event_id" = $1[0m  [["event_id", 4]]
+  ↳ app/controllers/events_controller.rb:5
+Completed 200 OK in 87ms (Views: 0.1ms | ActiveRecord: 20.6ms)
+
+
+Started GET "/activities" for ::1 at 2019-09-09 14:36:03 -0400
+Processing by ActivitiesController#index as HTML
+  [1m[36mActivity Load (0.9ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/controllers/activities_controller.rb:19
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/activities" for ::1 at 2019-09-09 14:37:17 -0400
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+  [1m[36mActivity Load (0.9ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/controllers/activities_controller.rb:13
+Completed 200 OK in 371228ms (Views: 11.0ms | ActiveRecord: 12.3ms)
+
+
+Started POST "/activities" for ::1 at 2019-09-09 14:51:39 -0400
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+Completed 200 OK in 973ms (Views: 4.3ms | ActiveRecord: 8.4ms)
+
+
+Started POST "/activities" for ::1 at 2019-09-09 15:01:13 -0400
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+Completed 200 OK in 986ms (Views: 4.3ms | ActiveRecord: 33.2ms)
+
+
+Started POST "/activities" for ::1 at 2019-09-09 15:01:23 -0400
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+Completed 200 OK in 1127ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/activities" for ::1 at 2019-09-09 15:03:02 -0400
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+Completed 200 OK in 994ms (Views: 6.0ms | ActiveRecord: 12.9ms)
+
+
+Started POST "/activities" for ::1 at 2019-09-09 15:05:21 -0400
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+Completed 200 OK in 1135ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/activities" for ::1 at 2019-09-09 15:05:31 -0400
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+Completed 200 OK in 1104ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7524942711515773740)[0m
+  ↳ bin/rails:4
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to AddColumnImageToActivities (20190909190919)
+  [1m[35m (2.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "activities" ADD "image" character varying[0m
+  ↳ db/migrate/20190909190919_add_column_image_to_activities.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190909190919"]]
+  ↳ bin/rails:4
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (4.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(7524942711515773740)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Started POST "/activities" for ::1 at 2019-09-09 15:12:45 -0400
+  [1m[35m (6.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/Users/flatironschool/eventr-backend/Eventr/app/controllers/activities_controller.rb:13: syntax error, unexpected '\n', expecting =>):
+  
+app/controllers/activities_controller.rb:13: syntax error, unexpected '\n', expecting =>
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7524942711515773740)[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(7524942711515773740)[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/bin/rake:23
+Started POST "/activities" for ::1 at 2019-09-09 15:13:51 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/Users/flatironschool/eventr-backend/Eventr/app/controllers/activities_controller.rb:13: syntax error, unexpected '\n', expecting =>):
+  
+app/controllers/activities_controller.rb:13: syntax error, unexpected '\n', expecting =>
+Started POST "/activities" for ::1 at 2019-09-09 15:14:49 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/Users/flatironschool/eventr-backend/Eventr/app/controllers/activities_controller.rb:13: syntax error, unexpected '\n', expecting =>):
+  
+app/controllers/activities_controller.rb:13: syntax error, unexpected '\n', expecting =>
+Started POST "/activities" for ::1 at 2019-09-09 15:16:55 -0400
+  
+SyntaxError (/Users/flatironschool/eventr-backend/Eventr/app/controllers/activities_controller.rb:14: syntax error, unexpected end, expecting ')'
+           end
+           ^~~
+/Users/flatironschool/eventr-backend/Eventr/app/controllers/activities_controller.rb:29: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/activities_controller.rb:14: syntax error, unexpected end, expecting ')'
+app/controllers/activities_controller.rb:29: syntax error, unexpected end-of-input, expecting end
+Started POST "/activities" for ::1 at 2019-09-09 15:17:02 -0400
+  
+SyntaxError (/Users/flatironschool/eventr-backend/Eventr/app/controllers/activities_controller.rb:14: syntax error, unexpected end, expecting ')'
+           end
+           ^~~
+/Users/flatironschool/eventr-backend/Eventr/app/controllers/activities_controller.rb:29: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/activities_controller.rb:14: syntax error, unexpected end, expecting ')'
+app/controllers/activities_controller.rb:29: syntax error, unexpected end-of-input, expecting end
+Started POST "/activities" for ::1 at 2019-09-09 15:17:35 -0400
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:13
+  [1m[36mActivity Create (0.8ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "All Good Presents: Rising Appalachia"], ["created_at", "2019-09-09 19:17:36.471460"], ["updated_at", "2019-09-09 19:17:36.471460"], ["link", "https://www.eventbrite.com/e/all-good-presents-rising-appalachia-tickets-62662040851?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F63146089%2F292744749467%2F1%2Foriginal.20190530-181131?auto=compress&s=ae56c481b4db3922ed39dfc7349a01cd"]]
+  ↳ app/controllers/activities_controller.rb:13
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:13
+Completed 500 Internal Server Error in 931ms (ActiveRecord: 11.8ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/activities_controller.rb:13:in `block in create'
+app/controllers/activities_controller.rb:12:in `map'
+app/controllers/activities_controller.rb:12:in `create'
+Started POST "/activities" for ::1 at 2019-09-09 15:18:00 -0400
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:13
+  [1m[36mActivity Create (0.5ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "TroyBoi"], ["created_at", "2019-09-09 19:18:01.351736"], ["updated_at", "2019-09-09 19:18:01.351736"], ["link", "https://www.eventbrite.com/e/troyboi-tickets-69236627617?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F68757467%2F258828620905%2F1%2Foriginal.20190815-144759?auto=compress&s=eb4f28b703803fc462c7da09dbd8eaad"]]
+  ↳ app/controllers/activities_controller.rb:13
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:13
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "MUSIC: Rebstar in Concert and Q&A"], ["created_at", "2019-09-09 19:18:01.356124"], ["updated_at", "2019-09-09 19:18:01.356124"], ["link", "https://www.eventbrite.com/e/music-rebstar-in-concert-and-qa-tickets-70978180649?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F70402337%2F26170080141%2F1%2Foriginal.20190829-201456?auto=compress&s=0112b5de687a2beec269c198e22ce10c"]]
+  ↳ app/controllers/activities_controller.rb:13
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:13
+  [1m[36mActivity Create (0.5ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Yonder Mountain String Band"], ["created_at", "2019-09-09 19:18:01.360156"], ["updated_at", "2019-09-09 19:18:01.360156"], ["link", "https://www.eventbrite.com/e/yonder-mountain-string-band-tickets-66963639047?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F66903821%2F292744749467%2F1%2Foriginal.20190729-223538?auto=compress&s=dfb1481a2ce4937b7e2e0066da8d2261"]]
+  ↳ app/controllers/activities_controller.rb:13
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:13
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "The Fab Faux perform White Album Selections and a set of Favorites"], ["created_at", "2019-09-09 19:18:01.364576"], ["updated_at", "2019-09-09 19:18:01.364576"], ["link", "https://www.eventbrite.com/e/the-fab-faux-perform-white-album-selections-and-a-set-of-favorites-tickets-62610008220?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F63093882%2F292744749467%2F1%2Foriginal.20190529-221805?auto=compress&s=87d3233185a3e7d364b66f7beae2fcc0"]]
+  ↳ app/controllers/activities_controller.rb:13
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:13
+  [1m[36mActivity Create (0.5ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "DJ SCHEMES & BILAL ALL BLACK AFFAIR 09.15 AT ROSEBAR"], ["created_at", "2019-09-09 19:18:01.368981"], ["updated_at", "2019-09-09 19:18:01.368981"], ["link", "https://www.eventbrite.com/e/dj-schemes-bilal-all-black-affair-0915-at-rosebar-tickets-69799132083?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F69167079%2F714090889%2F1%2Foriginal.20190819-210303?auto=compress&s=b0cc4b5be3dd0bc6a131e979bdade146"]]
+  ↳ app/controllers/activities_controller.rb:13
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:13
+Completed 500 Internal Server Error in 1180ms (ActiveRecord: 18.1ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/activities_controller.rb:13:in `block in create'
+app/controllers/activities_controller.rb:12:in `each'
+app/controllers/activities_controller.rb:12:in `create'
+Started POST "/activities" for ::1 at 2019-09-09 15:18:55 -0400
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:12
+  [1m[36mActivity Create (0.5ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Big Chief [9.27] : 'BabyGirl' -  DJ Money's Birthday Bash!"], ["created_at", "2019-09-09 19:18:56.568416"], ["updated_at", "2019-09-09 19:18:56.568416"], ["link", "https://www.eventbrite.com/e/big-chief-927-babygirl-dj-moneys-birthday-bash-tickets-70692955533?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F71226461%2F202175648799%2F1%2Foriginal.20190905-190207?auto=compress&s=587179a14e57aaa4633256e09d70f7cf"]]
+  ↳ app/controllers/activities_controller.rb:12
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:12
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "All Good Presents: Rising Appalachia"], ["created_at", "2019-09-09 19:18:56.573446"], ["updated_at", "2019-09-09 19:18:56.573446"], ["link", "https://www.eventbrite.com/e/all-good-presents-rising-appalachia-tickets-62662040851?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F63146089%2F292744749467%2F1%2Foriginal.20190530-181131?auto=compress&s=ae56c481b4db3922ed39dfc7349a01cd"]]
+  ↳ app/controllers/activities_controller.rb:12
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:12
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Greyson Chance"], ["created_at", "2019-09-09 19:18:56.577705"], ["updated_at", "2019-09-09 19:18:56.577705"], ["link", "https://www.eventbrite.com/e/greyson-chance-tickets-62667972593?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F63152011%2F92511743641%2F1%2Foriginal.20190530-193240?auto=compress&s=8c88fd3230f0468390f514c054bfd65e"]]
+  ↳ app/controllers/activities_controller.rb:12
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:12
+  [1m[36mActivity Create (0.5ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "TroyBoi"], ["created_at", "2019-09-09 19:18:56.581602"], ["updated_at", "2019-09-09 19:18:56.581602"], ["link", "https://www.eventbrite.com/e/troyboi-tickets-69236627617?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F68757467%2F258828620905%2F1%2Foriginal.20190815-144759?auto=compress&s=eb4f28b703803fc462c7da09dbd8eaad"]]
+  ↳ app/controllers/activities_controller.rb:12
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:12
+Completed 500 Internal Server Error in 899ms (ActiveRecord: 16.4ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/activities_controller.rb:12:in `block in create'
+app/controllers/activities_controller.rb:12:in `map'
+app/controllers/activities_controller.rb:12:in `create'
+Started POST "/activities" for ::1 at 2019-09-09 15:22:03 -0400
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+Completed 500 Internal Server Error in 1066ms (ActiveRecord: 5.5ms)
+
+
+  
+NoMethodError (undefined method `name' for #<Hash:0x00007fbe0b3138e8>):
+  
+app/controllers/activities_controller.rb:12:in `block in create'
+app/controllers/activities_controller.rb:12:in `map'
+app/controllers/activities_controller.rb:12:in `create'
+Started POST "/activities" for ::1 at 2019-09-09 15:22:46 -0400
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+Completed 500 Internal Server Error in 1132ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `name' for #<Hash:0x00007fbe0b4cf330>):
+  
+app/controllers/activities_controller.rb:12:in `block in create'
+app/controllers/activities_controller.rb:12:in `map'
+app/controllers/activities_controller.rb:12:in `create'
+Started POST "/activities" for ::1 at 2019-09-09 15:24:23 -0400
+  
+SyntaxError (/Users/flatironschool/eventr-backend/Eventr/app/controllers/activities_controller.rb:12: syntax error, unexpected '}', expecting ')'
+... category: event[:category_id]}
+...                              ^
+/Users/flatironschool/eventr-backend/Eventr/app/controllers/activities_controller.rb:17: syntax error, unexpected end, expecting '}'
+        end
+        ^~~
+/Users/flatironschool/eventr-backend/Eventr/app/controllers/activities_controller.rb:28: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/activities_controller.rb:12: syntax error, unexpected '}', expecting ')'
+app/controllers/activities_controller.rb:17: syntax error, unexpected end, expecting '}'
+app/controllers/activities_controller.rb:28: syntax error, unexpected end-of-input, expecting end
+Started POST "/activities" for ::1 at 2019-09-09 15:24:58 -0400
+  
+SyntaxError (/Users/flatironschool/eventr-backend/Eventr/app/controllers/activities_controller.rb:13: syntax error, unexpected '}', expecting ')'
+... category: event[:category_id]}
+...                              ^
+/Users/flatironschool/eventr-backend/Eventr/app/controllers/activities_controller.rb:17: syntax error, unexpected end, expecting '}'
+        end
+        ^~~
+/Users/flatironschool/eventr-backend/Eventr/app/controllers/activities_controller.rb:28: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/activities_controller.rb:13: syntax error, unexpected '}', expecting ')'
+app/controllers/activities_controller.rb:17: syntax error, unexpected end, expecting '}'
+app/controllers/activities_controller.rb:28: syntax error, unexpected end-of-input, expecting end
+Started POST "/activities" for ::1 at 2019-09-09 15:25:20 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/Users/flatironschool/eventr-backend/Eventr/app/controllers/activities_controller.rb:13: syntax error, unexpected '}', expecting ')'
+... category: event[:category_id]}
+...                              ^
+/Users/flatironschool/eventr-backend/Eventr/app/controllers/activities_controller.rb:17: syntax error, unexpected end, expecting '}'
+        end
+        ^~~
+/Users/flatironschool/eventr-backend/Eventr/app/controllers/activities_controller.rb:28: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/activities_controller.rb:13: syntax error, unexpected '}', expecting ')'
+app/controllers/activities_controller.rb:17: syntax error, unexpected end, expecting '}'
+app/controllers/activities_controller.rb:28: syntax error, unexpected end-of-input, expecting end
+Started POST "/activities" for ::1 at 2019-09-09 15:25:55 -0400
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+Started POST "/activities" for ::1 at 2019-09-09 15:30:11 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/Users/flatironschool/eventr-backend/Eventr/app/controllers/activities_controller.rb:14: syntax error, unexpected '}', expecting ')'
+... category: event[:category_id]}
+...                              ^
+/Users/flatironschool/eventr-backend/Eventr/app/controllers/activities_controller.rb:18: syntax error, unexpected end, expecting '}'
+        end
+        ^~~
+/Users/flatironschool/eventr-backend/Eventr/app/controllers/activities_controller.rb:29: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/activities_controller.rb:14: syntax error, unexpected '}', expecting ')'
+app/controllers/activities_controller.rb:18: syntax error, unexpected end, expecting '}'
+app/controllers/activities_controller.rb:29: syntax error, unexpected end-of-input, expecting end
+Started POST "/activities" for ::1 at 2019-09-09 15:30:22 -0400
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+Completed 500 Internal Server Error in 163857ms (ActiveRecord: 4.4ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/activities_controller.rb:14:in `block in create'
+app/controllers/activities_controller.rb:13:in `map'
+app/controllers/activities_controller.rb:13:in `create'
+Started POST "/activities" for ::1 at 2019-09-09 15:33:22 -0400
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (1.3ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "A Charlie Brown Christmas with The Eric Byrd Trio"], ["created_at", "2019-09-09 19:33:24.572108"], ["updated_at", "2019-09-09 19:33:24.572108"], ["link", "https://www.eventbrite.com/e/a-charlie-brown-christmas-with-the-eric-byrd-trio-tickets-61609347216?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F61942010%2F289993732209%2F1%2Foriginal.20190508-215501?auto=compress&s=6bfd86e80d91cc6afe325781a664f441"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.5ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Whethan"], ["created_at", "2019-09-09 19:33:24.578040"], ["updated_at", "2019-09-09 19:33:24.578040"], ["link", "https://www.eventbrite.com/e/whethan-tickets-69291888905?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F68757679%2F258819132951%2F1%2Foriginal.20190815-144932?auto=compress&s=0f9d1298718a62ea8d91fd5b723b7e46"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (1.3ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "SmartBrief's 6th Annual STEM Pathways Summit"], ["created_at", "2019-09-09 19:33:24.582758"], ["updated_at", "2019-09-09 19:33:24.582758"], ["link", "https://www.eventbrite.com/e/smartbriefs-6th-annual-stem-pathways-summit-registration-61199940670?aff=ebapi"], ["category", "102"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F61932818%2F134485171233%2F1%2Foriginal.20190508-194537?auto=compress&s=7d7f204068dba6796634b6017adc07e5"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.5ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Dave Hause & The Mermaid"], ["created_at", "2019-09-09 19:33:24.588656"], ["updated_at", "2019-09-09 19:33:24.588656"], ["link", "https://www.eventbrite.com/e/dave-hause-the-mermaid-tickets-61837455494?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F65789359%2F287272543298%2F1%2Foriginal.20190718-010206?auto=compress&s=b3b4ad81ce4c5c8aaa87d7ec6f7c5e8e"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.5ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Injury Reserve w/ Slauson Malone, Body Meat"], ["created_at", "2019-09-09 19:33:24.594279"], ["updated_at", "2019-09-09 19:33:24.594279"], ["link", "https://www.eventbrite.com/e/injury-reserve-w-slauson-malone-body-meat-tickets-62723700276?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F63534929%2F309959639028%2F1%2Foriginal.20190607-023822?auto=compress&s=d3b049f6a2f2bff8ea60542499a75d1c"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.6ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Logi Conference 2019"], ["created_at", "2019-09-09 19:33:24.598882"], ["updated_at", "2019-09-09 19:33:24.598882"], ["link", "https://www.eventbrite.com/e/logi-conference-2019-tickets-45453230837?aff=ebapi"], ["category", "102"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F62595227%2F202136451324%2F1%2Foriginal.20190520-194852?auto=compress&s=6bc9e353e7457db6d30e009fa8a768b2"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+Completed 200 OK in 58024ms (Views: 3.4ms | ActiveRecord: 22.4ms)
+
+
+Started POST "/activities" for ::1 at 2019-09-09 15:37:22 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.8ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Senses Fail w/ Hot Mulligan and Yours Truly"], ["created_at", "2019-09-09 19:37:24.144250"], ["updated_at", "2019-09-09 19:37:24.144250"], ["link", "https://www.eventbrite.com/e/senses-fail-w-hot-mulligan-and-yours-truly-tickets-62736396250?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F63309450%2F309959639028%2F1%2Foriginal.20190603-174828?auto=compress&s=336a16ccd32caea4b75c7d98f5cf6930"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Grits and Gravy Present Official Howard Homecoming Flashback Dance Party"], ["created_at", "2019-09-09 19:37:24.149363"], ["updated_at", "2019-09-09 19:37:24.149363"], ["link", "https://www.eventbrite.com/e/grits-and-gravy-present-official-howard-homecoming-flashback-dance-party-tickets-71566536437?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F71082769%2F334846579629%2F1%2Foriginal.20190904-214330?auto=compress&s=37b01db79d90c58109005e92353171db"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.5ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Rumble On The Row"], ["created_at", "2019-09-09 19:37:24.153550"], ["updated_at", "2019-09-09 19:37:24.153550"], ["link", "https://www.eventbrite.com/e/rumble-on-the-row-tickets-65206403107?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F65242193%2F303272431974%2F1%2Foriginal.20190711-194414?auto=compress&s=0b90f64eaa9b8dc792fd6560a7b56543"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Ferry Corsten"], ["created_at", "2019-09-09 19:37:24.157985"], ["updated_at", "2019-09-09 19:37:24.157985"], ["link", "https://www.eventbrite.com/e/ferry-corsten-tickets-62320050950?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F62793010%2F258819132951%2F1%2Foriginal.20190523-174114?auto=compress&s=c09d6afffe39b13f3df1ddbaa0e0383b"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "TRAP Karaoke: Washington, D.C. "], ["created_at", "2019-09-09 19:37:24.161916"], ["updated_at", "2019-09-09 19:37:24.161916"], ["link", "https://www.eventbrite.com/e/trap-karaoke-washington-dc-tickets-69489985417?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F68938417%2F6195246267%2F1%2Foriginal.20190816-211126?auto=compress&s=0df7ce4a4e18cec5adedce1ba78069e6"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "How the United States Can Maintain Its Lead in the Global AI Race"], ["created_at", "2019-09-09 19:37:24.165906"], ["updated_at", "2019-09-09 19:37:24.165906"], ["link", "https://www.eventbrite.com/e/how-the-united-states-can-maintain-its-lead-in-the-global-ai-race-tickets-68532802457?aff=ebapi"], ["category", "102"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F68166191%2F82894178671%2F1%2Foriginal.20190809-195454?auto=compress&s=0c2ff0373d95d027da280e622bd5f312"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+Completed 200 OK in 1370ms (Views: 1.1ms | ActiveRecord: 20.3ms)
+
+
+Started POST "/activities" for ::1 at 2019-09-09 15:37:37 -0400
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.9ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "The Fab Faux perform White Album Selections and a set of Favorites"], ["created_at", "2019-09-09 19:37:38.315716"], ["updated_at", "2019-09-09 19:37:38.315716"], ["link", "https://www.eventbrite.com/e/the-fab-faux-perform-white-album-selections-and-a-set-of-favorites-tickets-62610008220?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F63093882%2F292744749467%2F1%2Foriginal.20190529-221805?auto=compress&s=87d3233185a3e7d364b66f7beae2fcc0"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "MUSIC: Rebstar in Concert and Q&A"], ["created_at", "2019-09-09 19:37:38.321040"], ["updated_at", "2019-09-09 19:37:38.321040"], ["link", "https://www.eventbrite.com/e/music-rebstar-in-concert-and-qa-tickets-70978180649?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F70402337%2F26170080141%2F1%2Foriginal.20190829-201456?auto=compress&s=0112b5de687a2beec269c198e22ce10c"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "TRAP Karaoke: Washington, D.C. "], ["created_at", "2019-09-09 19:37:38.325497"], ["updated_at", "2019-09-09 19:37:38.325497"], ["link", "https://www.eventbrite.com/e/trap-karaoke-washington-dc-tickets-69489985417?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F68938417%2F6195246267%2F1%2Foriginal.20190816-211126?auto=compress&s=0df7ce4a4e18cec5adedce1ba78069e6"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Malaa at A.i. [Secret Warehouse] (21+)"], ["created_at", "2019-09-09 19:37:38.329783"], ["updated_at", "2019-09-09 19:37:38.329783"], ["link", "https://www.eventbrite.com/e/malaa-at-ai-secret-warehouse-21-tickets-70170410587?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F70100481%2F308996544228%2F1%2Foriginal.20190827-201449?auto=compress&s=1b4e8bc52116af7f3df1492f7490dfcf"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.5ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "We Banjo 3"], ["created_at", "2019-09-09 19:37:38.334196"], ["updated_at", "2019-09-09 19:37:38.334196"], ["link", "https://www.eventbrite.com/e/we-banjo-3-tickets-60837050255?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F61139846%2F289993732209%2F1%2Foriginal.20190424-202857?auto=compress&s=1b44d54b1ab9de02dd11471a30bace86"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.6ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Songbyrd Presents: The National Parks"], ["created_at", "2019-09-09 19:37:38.338869"], ["updated_at", "2019-09-09 19:37:38.338869"], ["link", "https://www.eventbrite.com/e/songbyrd-presents-the-national-parks-tickets-63707919101?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F64115638%2F282359225150%2F1%2Foriginal.20190619-000958?auto=compress&s=1191a36ebd47c57614bf9cb981c2db9c"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+Completed 200 OK in 1041ms (Views: 1.0ms | ActiveRecord: 12.9ms)
+
+
+Started POST "/activities" for ::1 at 2019-09-09 15:37:58 -0400
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Jay Som"], ["created_at", "2019-09-09 19:38:00.448908"], ["updated_at", "2019-09-09 19:38:00.448908"], ["link", "https://www.eventbrite.com/e/jay-som-tickets-62642274730?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F63123814%2F92511743641%2F1%2Foriginal.20190530-130118?auto=compress&s=5b9355e439cb0b647b3dd863db0e4832"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.5ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Injury Reserve w/ Slauson Malone, Body Meat"], ["created_at", "2019-09-09 19:38:00.453103"], ["updated_at", "2019-09-09 19:38:00.453103"], ["link", "https://www.eventbrite.com/e/injury-reserve-w-slauson-malone-body-meat-tickets-62723700276?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F63534929%2F309959639028%2F1%2Foriginal.20190607-023822?auto=compress&s=d3b049f6a2f2bff8ea60542499a75d1c"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+Completed 500 Internal Server Error in 1504ms (ActiveRecord: 3.9ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/activities_controller.rb:14:in `block in create'
+app/controllers/activities_controller.rb:13:in `map'
+app/controllers/activities_controller.rb:13:in `create'
+Started POST "/activities" for ::1 at 2019-09-09 15:38:25 -0400
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.6ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Ferry Corsten"], ["created_at", "2019-09-09 19:38:26.389442"], ["updated_at", "2019-09-09 19:38:26.389442"], ["link", "https://www.eventbrite.com/e/ferry-corsten-tickets-62320050950?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F62793010%2F258819132951%2F1%2Foriginal.20190523-174114?auto=compress&s=c09d6afffe39b13f3df1ddbaa0e0383b"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Jimmy Herring and The 5 of 7"], ["created_at", "2019-09-09 19:38:26.394844"], ["updated_at", "2019-09-09 19:38:26.394844"], ["link", "https://www.eventbrite.com/e/jimmy-herring-and-the-5-of-7-tickets-61361145839?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F61922193%2F289993732209%2F1%2Foriginal.20190508-173606?auto=compress&s=f4650b6f91578dfcd1b723e22355e732"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "SmartBrief's 6th Annual STEM Pathways Summit"], ["created_at", "2019-09-09 19:38:26.398509"], ["updated_at", "2019-09-09 19:38:26.398509"], ["link", "https://www.eventbrite.com/e/smartbriefs-6th-annual-stem-pathways-summit-registration-61199940670?aff=ebapi"], ["category", "102"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F61932818%2F134485171233%2F1%2Foriginal.20190508-194537?auto=compress&s=7d7f204068dba6796634b6017adc07e5"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Bijou"], ["created_at", "2019-09-09 19:38:26.402825"], ["updated_at", "2019-09-09 19:38:26.402825"], ["link", "https://www.eventbrite.com/e/bijou-tickets-67532883673?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F67266391%2F258819132951%2F1%2Foriginal.20190801-170531?auto=compress&s=82d002966d6b24c7fd3dbc5c951f5551"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "A Charlie Brown Christmas with The Eric Byrd Trio"], ["created_at", "2019-09-09 19:38:26.417988"], ["updated_at", "2019-09-09 19:38:26.417988"], ["link", "https://www.eventbrite.com/e/a-charlie-brown-christmas-with-the-eric-byrd-trio-tickets-61609347216?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F61942010%2F289993732209%2F1%2Foriginal.20190508-215501?auto=compress&s=6bfd86e80d91cc6afe325781a664f441"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.8ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "RITON | Auckland"], ["created_at", "2019-09-09 19:38:26.422369"], ["updated_at", "2019-09-09 19:38:26.422369"], ["link", "https://www.eventbrite.com.au/e/riton-auckland-tickets-70456837297?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F69851963%2F213493730641%2F1%2Foriginal.20190826-022816?auto=compress&s=a9095447e0750fb81886cd929cffcb59"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+Completed 200 OK in 903ms (Views: 1.6ms | ActiveRecord: 12.6ms)
+
+
+Started POST "/activities" for ::1 at 2019-09-09 15:39:45 -0400
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.5ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Allday and Mallrat"], ["created_at", "2019-09-09 19:39:46.491717"], ["updated_at", "2019-09-09 19:39:46.491717"], ["link", "https://www.eventbrite.com/e/allday-and-mallrat-tickets-64193885640?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F65789585%2F287272543298%2F1%2Foriginal.20190718-010535?auto=compress&s=96db59473830c5e3f03ab91323b83439"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.5ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "North Mississippi Allstars"], ["created_at", "2019-09-09 19:39:46.495881"], ["updated_at", "2019-09-09 19:39:46.495881"], ["link", "https://www.eventbrite.com/e/north-mississippi-allstars-tickets-63822856883?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F64176551%2F292744749467%2F1%2Foriginal.20190619-233030?auto=compress&s=f6c88c17d9e8ffb28ffcdac5a1f544a8"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.5ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "A Charlie Brown Christmas with The Eric Byrd Trio"], ["created_at", "2019-09-09 19:39:46.500430"], ["updated_at", "2019-09-09 19:39:46.500430"], ["link", "https://www.eventbrite.com/e/a-charlie-brown-christmas-with-the-eric-byrd-trio-tickets-61609347216?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F61942010%2F289993732209%2F1%2Foriginal.20190508-215501?auto=compress&s=6bfd86e80d91cc6afe325781a664f441"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+Completed 500 Internal Server Error in 1096ms (ActiveRecord: 5.9ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/activities_controller.rb:14:in `block in create'
+app/controllers/activities_controller.rb:13:in `map'
+app/controllers/activities_controller.rb:13:in `create'
+Started POST "/activities" for ::1 at 2019-09-09 15:40:23 -0400
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.5ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Big Chief [9.27] : 'BabyGirl' -  DJ Money's Birthday Bash!"], ["created_at", "2019-09-09 19:40:25.026018"], ["updated_at", "2019-09-09 19:40:25.026018"], ["link", "https://www.eventbrite.com/e/big-chief-927-babygirl-dj-moneys-birthday-bash-tickets-70692955533?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F71226461%2F202175648799%2F1%2Foriginal.20190905-190207?auto=compress&s=587179a14e57aaa4633256e09d70f7cf"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Tab Benoit"], ["created_at", "2019-09-09 19:40:25.031536"], ["updated_at", "2019-09-09 19:40:25.031536"], ["link", "https://www.eventbrite.com/e/tab-benoit-tickets-70072646171?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F69467269%2F292744749467%2F1%2Foriginal.20190821-212059?auto=compress&s=aea4a8dbf5245d2144efc65915ee3e10"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.8ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Aldous Harding"], ["created_at", "2019-09-09 19:40:25.035896"], ["updated_at", "2019-09-09 19:40:25.035896"], ["link", "https://www.eventbrite.com/e/aldous-harding-tickets-63691438808?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F64100585%2F92511743641%2F1%2Foriginal.20190618-192934?auto=compress&s=fe3ee076dd5f3ff8576d3e9d3a6a0995"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Anthony Ramos"], ["created_at", "2019-09-09 19:40:25.041661"], ["updated_at", "2019-09-09 19:40:25.041661"], ["link", "https://www.eventbrite.com/e/anthony-ramos-tickets-69291238961?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F68757041%2F92511743641%2F1%2Foriginal.20190815-144505?auto=compress&s=f19d7e144b893bca5d97bdd9d8bf155e"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.6ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Grits and Gravy Present Official Howard Homecoming Flashback Dance Party"], ["created_at", "2019-09-09 19:40:25.045402"], ["updated_at", "2019-09-09 19:40:25.045402"], ["link", "https://www.eventbrite.com/e/grits-and-gravy-present-official-howard-homecoming-flashback-dance-party-tickets-71566536437?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F71082769%2F334846579629%2F1%2Foriginal.20190904-214330?auto=compress&s=37b01db79d90c58109005e92353171db"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.6ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "How the United States Can Maintain Its Lead in the Global AI Race"], ["created_at", "2019-09-09 19:40:25.051014"], ["updated_at", "2019-09-09 19:40:25.051014"], ["link", "https://www.eventbrite.com/e/how-the-united-states-can-maintain-its-lead-in-the-global-ai-race-tickets-68532802457?aff=ebapi"], ["category", "102"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F68166191%2F82894178671%2F1%2Foriginal.20190809-195454?auto=compress&s=0c2ff0373d95d027da280e622bd5f312"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+Completed 200 OK in 1718ms (Views: 10.7ms | ActiveRecord: 12.7ms)
+
+
+Started POST "/activities" for ::1 at 2019-09-09 15:40:30 -0400
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "TUESDAY, SEPTEMBER 17 - TUTORIAL WORKSHOPS"], ["created_at", "2019-09-09 19:40:31.264963"], ["updated_at", "2019-09-09 19:40:31.264963"], ["link", "https://www.eventbrite.com/e/tuesday-september-17-tutorial-workshops-tickets-62046804663?aff=ebapi"], ["category", "102"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F62463625%2F255065808313%2F1%2Foriginal.20190517-133255?auto=compress&s=8847fb98d721c6e626257443f73c6512"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.6ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Afro Karaoke x Jollof Gist (DC)"], ["created_at", "2019-09-09 19:40:31.269542"], ["updated_at", "2019-09-09 19:40:31.269542"], ["link", "https://www.eventbrite.com/e/afro-karaoke-x-jollof-gist-dc-tickets-70319420279?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F69714591%2F215789505353%2F1%2Foriginal.jpg?auto=compress&s=093160d44e5333ed8364335e1615b7de"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Anthony Ramos"], ["created_at", "2019-09-09 19:40:31.274250"], ["updated_at", "2019-09-09 19:40:31.274250"], ["link", "https://www.eventbrite.com/e/anthony-ramos-tickets-69291238961?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F68757041%2F92511743641%2F1%2Foriginal.20190815-144505?auto=compress&s=f19d7e144b893bca5d97bdd9d8bf155e"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.5ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "We Banjo 3"], ["created_at", "2019-09-09 19:40:31.278287"], ["updated_at", "2019-09-09 19:40:31.278287"], ["link", "https://www.eventbrite.com/e/we-banjo-3-tickets-60837050255?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F61139846%2F289993732209%2F1%2Foriginal.20190424-202857?auto=compress&s=1b44d54b1ab9de02dd11471a30bace86"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Greyson Chance"], ["created_at", "2019-09-09 19:40:31.282299"], ["updated_at", "2019-09-09 19:40:31.282299"], ["link", "https://www.eventbrite.com/e/greyson-chance-tickets-62667972593?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F63152011%2F92511743641%2F1%2Foriginal.20190530-193240?auto=compress&s=8c88fd3230f0468390f514c054bfd65e"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Prok & Fitch"], ["created_at", "2019-09-09 19:40:31.288004"], ["updated_at", "2019-09-09 19:40:31.288004"], ["link", "https://www.eventbrite.com/e/prok-fitch-tickets-70158456833?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F69570773%2F258819132951%2F1%2Foriginal.20190822-171450?auto=compress&s=4c5bf6083f0e7783a50b6698465b0126"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+Completed 200 OK in 1121ms (Views: 1.3ms | ActiveRecord: 11.1ms)
+
+
+Started POST "/activities" for ::1 at 2019-09-09 15:40:43 -0400
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.5ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "TRAP Karaoke: Washington, D.C. "], ["created_at", "2019-09-09 19:40:44.057215"], ["updated_at", "2019-09-09 19:40:44.057215"], ["link", "https://www.eventbrite.com/e/trap-karaoke-washington-dc-tickets-69489985417?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F68938417%2F6195246267%2F1%2Foriginal.20190816-211126?auto=compress&s=0df7ce4a4e18cec5adedce1ba78069e6"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Prok & Fitch"], ["created_at", "2019-09-09 19:40:44.061498"], ["updated_at", "2019-09-09 19:40:44.061498"], ["link", "https://www.eventbrite.com/e/prok-fitch-tickets-70158456833?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F69570773%2F258819132951%2F1%2Foriginal.20190822-171450?auto=compress&s=4c5bf6083f0e7783a50b6698465b0126"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.5ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "BOSE Workshop on the Future of Undergraduate STEM Education"], ["created_at", "2019-09-09 19:40:44.065934"], ["updated_at", "2019-09-09 19:40:44.065934"], ["link", "https://www.eventbrite.com/e/bose-workshop-on-the-future-of-undergraduate-stem-education-tickets-65053923035?aff=ebapi"], ["category", "102"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F65105801%2F267765497176%2F1%2Foriginal.20190709-185037?auto=compress&s=7c6a281bc6aa1adb819f3bfe9a465b4c"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Senses Fail w/ Hot Mulligan and Yours Truly"], ["created_at", "2019-09-09 19:40:44.070674"], ["updated_at", "2019-09-09 19:40:44.070674"], ["link", "https://www.eventbrite.com/e/senses-fail-w-hot-mulligan-and-yours-truly-tickets-62736396250?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F63309450%2F309959639028%2F1%2Foriginal.20190603-174828?auto=compress&s=336a16ccd32caea4b75c7d98f5cf6930"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "How the United States Can Maintain Its Lead in the Global AI Race"], ["created_at", "2019-09-09 19:40:44.075074"], ["updated_at", "2019-09-09 19:40:44.075074"], ["link", "https://www.eventbrite.com/e/how-the-united-states-can-maintain-its-lead-in-the-global-ai-race-tickets-68532802457?aff=ebapi"], ["category", "102"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F68166191%2F82894178671%2F1%2Foriginal.20190809-195454?auto=compress&s=0c2ff0373d95d027da280e622bd5f312"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.6ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Logi Conference 2019"], ["created_at", "2019-09-09 19:40:44.079086"], ["updated_at", "2019-09-09 19:40:44.079086"], ["link", "https://www.eventbrite.com/e/logi-conference-2019-tickets-45453230837?aff=ebapi"], ["category", "102"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F62595227%2F202136451324%2F1%2Foriginal.20190520-194852?auto=compress&s=6bc9e353e7457db6d30e009fa8a768b2"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+Completed 200 OK in 943ms (Views: 1.2ms | ActiveRecord: 12.6ms)
+
+
+Started POST "/activities" for ::1 at 2019-09-09 15:41:09 -0400
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.9ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Rumble On The Row"], ["created_at", "2019-09-09 19:41:10.540004"], ["updated_at", "2019-09-09 19:41:10.540004"], ["link", "https://www.eventbrite.com/e/rumble-on-the-row-tickets-65206403107?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F65242193%2F303272431974%2F1%2Foriginal.20190711-194414?auto=compress&s=0b90f64eaa9b8dc792fd6560a7b56543"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Grits and Gravy Present Official Howard Homecoming Flashback Dance Party"], ["created_at", "2019-09-09 19:41:10.544735"], ["updated_at", "2019-09-09 19:41:10.544735"], ["link", "https://www.eventbrite.com/e/grits-and-gravy-present-official-howard-homecoming-flashback-dance-party-tickets-71566536437?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F71082769%2F334846579629%2F1%2Foriginal.20190904-214330?auto=compress&s=37b01db79d90c58109005e92353171db"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Greyson Chance"], ["created_at", "2019-09-09 19:41:10.548822"], ["updated_at", "2019-09-09 19:41:10.548822"], ["link", "https://www.eventbrite.com/e/greyson-chance-tickets-62667972593?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F63152011%2F92511743641%2F1%2Foriginal.20190530-193240?auto=compress&s=8c88fd3230f0468390f514c054bfd65e"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "TRAP Karaoke: Washington, D.C. "], ["created_at", "2019-09-09 19:41:10.552923"], ["updated_at", "2019-09-09 19:41:10.552923"], ["link", "https://www.eventbrite.com/e/trap-karaoke-washington-dc-tickets-69489985417?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F68938417%2F6195246267%2F1%2Foriginal.20190816-211126?auto=compress&s=0df7ce4a4e18cec5adedce1ba78069e6"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.5ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Injury Reserve w/ Slauson Malone, Body Meat"], ["created_at", "2019-09-09 19:41:10.556873"], ["updated_at", "2019-09-09 19:41:10.556873"], ["link", "https://www.eventbrite.com/e/injury-reserve-w-slauson-malone-body-meat-tickets-62723700276?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F63534929%2F309959639028%2F1%2Foriginal.20190607-023822?auto=compress&s=d3b049f6a2f2bff8ea60542499a75d1c"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Dave Hause & The Mermaid"], ["created_at", "2019-09-09 19:41:10.560990"], ["updated_at", "2019-09-09 19:41:10.560990"], ["link", "https://www.eventbrite.com/e/dave-hause-the-mermaid-tickets-61837455494?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F65789359%2F287272543298%2F1%2Foriginal.20190718-010206?auto=compress&s=b3b4ad81ce4c5c8aaa87d7ec6f7c5e8e"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+Completed 200 OK in 1046ms (Views: 0.9ms | ActiveRecord: 11.8ms)
+
+
+Started POST "/activities" for ::1 at 2019-09-09 15:41:26 -0400
+Processing by ActivitiesController#create as */*
+  Parameters: {"category"=>[102, 103], "activity"=>{"category"=>[102, 103]}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Sunday Night Live (NO WORK MONDAY)  ft. Jae Murphy (Howard Homecoming)"], ["created_at", "2019-09-09 19:41:27.398836"], ["updated_at", "2019-09-09 19:41:27.398836"], ["link", "https://www.eventbrite.com/e/sunday-night-live-no-work-monday-ft-jae-murphy-howard-homecoming-tickets-62244799872?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F70004379%2F77052619%2F1%2Foriginal.20190827-072317?auto=compress&s=6552987a5b134d0897e3407fea5a887c"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Universal Life: The Search for Life Beyond the Solar System"], ["created_at", "2019-09-09 19:41:27.403613"], ["updated_at", "2019-09-09 19:41:27.403613"], ["link", "https://www.eventbrite.com/e/universal-life-the-search-for-life-beyond-the-solar-system-registration-65819910123?aff=ebapi"], ["category", "102"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F65865463%2F294740345535%2F1%2Foriginal.20190718-174503?auto=compress&s=1e0619ab2495301c270c302ec1a82699"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Midnight Kids"], ["created_at", "2019-09-09 19:41:27.407869"], ["updated_at", "2019-09-09 19:41:27.407869"], ["link", "https://www.eventbrite.com/e/midnight-kids-tickets-69448086095?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F68910773%2F258819132951%2F1%2Foriginal.20190816-173000?auto=compress&s=73cb214ccb5c36d20a4b0d6611fb97a2"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.6ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "TUESDAY, SEPTEMBER 17 - TUTORIAL WORKSHOPS"], ["created_at", "2019-09-09 19:41:27.411964"], ["updated_at", "2019-09-09 19:41:27.411964"], ["link", "https://www.eventbrite.com/e/tuesday-september-17-tutorial-workshops-tickets-62046804663?aff=ebapi"], ["category", "102"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F62463625%2F255065808313%2F1%2Foriginal.20190517-133255?auto=compress&s=8847fb98d721c6e626257443f73c6512"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Bijou"], ["created_at", "2019-09-09 19:41:27.415489"], ["updated_at", "2019-09-09 19:41:27.415489"], ["link", "https://www.eventbrite.com/e/bijou-tickets-67532883673?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F67266391%2F258819132951%2F1%2Foriginal.20190801-170531?auto=compress&s=82d002966d6b24c7fd3dbc5c951f5551"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "created_at", "updated_at", "link", "category", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Allday and Mallrat"], ["created_at", "2019-09-09 19:41:27.419340"], ["updated_at", "2019-09-09 19:41:27.419340"], ["link", "https://www.eventbrite.com/e/allday-and-mallrat-tickets-64193885640?aff=ebapi"], ["category", "103"], ["image", "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F65789585%2F287272543298%2F1%2Foriginal.20190718-010535?auto=compress&s=96db59473830c5e3f03ab91323b83439"]]
+  ↳ app/controllers/activities_controller.rb:14
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:14
+Completed 200 OK in 918ms (Views: 1.1ms | ActiveRecord: 11.3ms)
+
+
