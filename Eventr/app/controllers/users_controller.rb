@@ -22,6 +22,9 @@ class UsersController < ApplicationController
             :include => {
                 :activities => {
                     :except => [:created_at, :updated_at]
+                },
+                :activity_events => {
+                    :except => [:created_at, :updated_at]
                 }
             }}
         },
