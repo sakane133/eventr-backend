@@ -11,7 +11,11 @@ ActivityEvent.destroy_all
 Photo.destroy_all
 Activity.destroy_all
 
-lisa = User.create(name: 'Lisa', password: 'lisa')
-e = Event.create(event_type:'birthday', name: 'Lisa bday bash', num_people: 10, budget: 1000, date: 20190915, user_id: lisa.id)
-activity = Activity.create(name: 'Clubbling', link:'www.google.com')
-activity_event = ActivityEvent.create(activity_id: activity.id, event_id: e.id)
+lisa = User.create(name: 'Lisa', password_digest: 'lisa')
+e = Event.create(event_type:'birthday', name: 'Lisa bday bash', num_people: 10, budget: 1000, date: 20190904, user_id: lisa.id)
+activity = Activity.create(name: 'Clubbling', link:'www.google.com', category: 'bday')
+new = Activity.create(name: 'Karaoke', link:'www.google.com', category: 'bday')
+activity_event = ActivityEvent.create(activity_id: activity.id, event_id: e.id, selected: true)
+ActivityEvent.create(activity_id: new.id, event_id: e.id, selected: true)
+newB = Activity.create(name: 'Bowling', link:'www.google.com', category: 'bday')
+ActivityEvent.create(activity_id: newB.id, event_id: e.id, selected: true)
